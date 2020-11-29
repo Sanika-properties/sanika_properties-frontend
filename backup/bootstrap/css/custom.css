@@ -1,0 +1,29 @@
+.width-300{
+width: 300px;
+}
+/*
+.dropdown{
+    background: rgb(251,145,47);
+}
+*/
+.banner-image{
+    background: url(&quot;/assets/img/banner.jpg?h=a3de2cf7d470180347fe8596e20055fb&quot;) left / cover;
+}
+
+.font-30{
+    font-size:30px;
+}
+
+.font-60{
+    font-size:60px;
+}
+
+.button-yellow{
+    background: rgb(251,145,47)
+}
+
+.btn.btn-primary.btn-xl.text-uppercase.js-scroll-trigger {
+    background: rgb(251,145,47);
+  }
+  
+  
