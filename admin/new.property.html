@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        New Property
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- CSS Files -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+</head>
+
+<body class="user-profile">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="orange">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+            <div class="logo">
+                <a href="#" class="simple-text logo-mini">
+                    SP
+                </a>
+                <a href="#" class="simple-text logo-normal">
+                    Properties
+                </a>
+            </div>
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="./dashboard.html">
+                            <i class="now-ui-icons design_app"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./new.property.html">
+                            <i class="now-ui-icons design_bullet-list-67"></i>
+                            <p>Add Property</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./new.property.html">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p id="logOut-btn">Log out</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel" id="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand" href="#pablo">New Property</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#pablo">
+                                    <i class="now-ui-icons users_single-02"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Account</span>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-sm">
+            </div>
+            <div class="content">
+                <div class=" row">
+                    <div class=" col-md-10 mx-auto">
+                        <div class="modal-container""></div>
+                        <div class=" card">
+                            <div class="card-header text-center">
+                                <h5 class="title">New Property</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mx-auto">
+                                    <form class="text-center border border-light px-5" action="#!">
+                                        <!-- Email -->
+                                        <input type="text" id="title" class="form-control mb-4" placeholder="Title"
+                                            required>
+
+                                        <!-- Password -->
+                                        <input type="text" id="location" class="form-control mb-4"
+                                            placeholder="Location" required>
+
+                                        <textarea class="form-control" type="text" id="description"
+                                            placeholder="Description" required></textarea>
+
+                                        <div class="form-file custom-file mt-4">
+                                            <input type="file" class="form-file-input" id="image" name="image" multiple
+                                                required>
+                                            <label class="form-file-label" for="image">
+                                                <span class="form-file-text custom-file-label">Choose image(s)...</span>
+                                                <span class="form-file-button">Browse</span>
+                                            </label>
+                                        </div>
+
+                                        <div>
+                                            <button class="btn btn-warning float-right mt-4" id="create-btn"
+                                                style="background-color: rgb(23, 51, 211);" type="submit">Create
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class=" container-fluid ">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="https://www.creative-tim.com">
+                                    Creative Tim
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://presentation.creative-tim.com">
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://blog.creative-tim.com">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+
+    <!-- for bs file input -->
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+
+    <!-- custom js -->
+    <script src="../customJS/shared.js"></script>
+    <script src="../customJS/new.property.js"></script>
+
+</body>
+
+</html>

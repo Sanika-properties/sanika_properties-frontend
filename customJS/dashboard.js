@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3000'
+const baseUrl = 'https://sanika-properties.herokuapp.com';
 const logOutBtn = document.getElementById('logOut-btn');
 const propertySection = document.getElementById('property-list');
 const token = localStorage.getItem('token');
@@ -24,17 +24,35 @@ function showProperty(properties) {
                 ${property.title}
             </td>
             <td>
-            ${property.description}
+            ${property.location}
             </td>
             <td>
                 <img src='${image}' width="100px"/>
             </td>
             <td class="text-right">
-                <button class="btn btn-outline btn-sm"><a>Edit</a></button>
-                <button class="btn btn-danger btn-sm">Delete</button>
+                <a class="btn btn-outline btn-sm" href='./edit.property.html?id=${property._id}'>Edit</a>
+                <button class="btn btn-danger btn-sm" id="delete-btn-${property._id}">Delete</button>
             </td>
         </tr>
         `;
+        const deleteButton = document.querySelector(`#delete-btn-${property._id}`);
+        deleteButton.addEventListener('click', () => {
+            deleteProperty(property._id)
+                .then(() => {
+                    showModal('Successfully deleted', 'success');
+                    location.reload();
+                })
+        })
+    });
+}
+
+
+function deleteProperty(id) {
+    return fetch(`${baseUrl}/property/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'authorization': `Bearer ${token}`
+        },
     });
 }
 
@@ -46,12 +64,6 @@ getProperties()
     });
 
 
-document.addEventListener('click', function (e) {
-    if (e.target && e.target.id == 'delete-btn') {
-        alert('Are you sure you want to delete the property ?');
-
-    }
-});
 
 
 const logOut = () => {
