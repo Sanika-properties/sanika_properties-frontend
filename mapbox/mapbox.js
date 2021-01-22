@@ -143,7 +143,7 @@ map.on("load", function () {
   });
 });
 
-// map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
+map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
 
 map.addControl(
   new MapboxGeocoder({

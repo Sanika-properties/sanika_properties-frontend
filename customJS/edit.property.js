@@ -1,8 +1,9 @@
-const baseUrl = "https://sanika-properties.herokuapp.com";
+// const baseUrl = "https://sanika-properties.herokuapp.com";
 const token = localStorage.getItem("token");
 
 const propertyId = window.location.search.split("=")[1];
 
+const logOutBtn = document.getElementById("logOut-btn");
 const propertyTitle = document.getElementById("title");
 const propertyLocation = document.getElementById("location");
 const propertyDescription = document.getElementById("description");
@@ -48,3 +49,5 @@ function editProperty(editedProperty) {
       showModal("Property updated", "success");
     });
 }
+
+logOutBtn.addEventListener("click", logOut);

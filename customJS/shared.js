@@ -1,5 +1,10 @@
 const baseUrl = "http://localhost:3000";
 
+const logOut = () => {
+  localStorage.removeItem("token");
+  window.location.replace("../login.html");
+};
+
 // look for div with class error-message and add popup to it
 function showModal(message, styleClass) {
   if (!message) return;
