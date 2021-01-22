@@ -28,9 +28,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
   <link rel="stylesheet" href="./Style.css" />
-  <link rel="stylesheet" href="./mobile-style.css">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
   
 
@@ -153,10 +150,16 @@
     
     
     <!-- needs to change this to production build before deploying -->
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script> 
+    <!-- <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script> 
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-    
+     -->
+     <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+    <script src="../customJS/shared.js"></script>
     <script src="../../mapbox/mapbox.js"></script>
+    
+    
     <!-- Load the React component. -->
     <script type="module" src="../../propertySearch.component.js"></script>
   </body>

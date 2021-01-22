@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://calm-earth-03611.herokuapp.com";
 
 const logOut = () => {
   localStorage.removeItem("token");

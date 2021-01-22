@@ -41,14 +41,16 @@ const cities = [
 
 const { useState, useEffect } = React;
 
-const endpoint = "http://localhost:3000/property?";
+const endpoint = "https://calm-earth-03611.herokuapp.com/property?";
 
 const PropertySearch = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const [url, setUrl] = useState("http://localhost:3000/property");
+  const [url, setUrl] = useState(
+    "https://calm-earth-03611.herokuapp.com/property"
+  );
   const [queryParams, setQueryParams] = useState({});
 
   const handleChange = ({ target }) => {
@@ -126,7 +128,7 @@ const PropertySearch = () => {
           <div className="form-group m-1">
             <select
               className="btn-sm form-control-plaintext"
-              id="inputGroupSelect01"
+              id="inputGroupSelect0"
               onChange={handleChange}
               name="purpose"
             >
@@ -229,10 +231,10 @@ const PropertySearch = () => {
                     </p>
                     <ul className="list-inline small">
                       <li className="list-inline-item">
-                        <h6>
-                          <i class="fas fa-rupee-sign"></i> {property.price}{" "}
+                        <p>
+                          <i className="fas fa-rupee-sign"></i> {property.price}{" "}
                           Lakhs
-                        </h6>
+                        </p>
                       </li>
                       <li className="list-inline-item float-right">
                         <a

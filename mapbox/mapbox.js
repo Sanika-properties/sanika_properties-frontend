@@ -20,7 +20,7 @@ function getData(url) {
     .catch((err) => console.log(err));
 }
 
-getData("http://localhost:3000/property");
+getData(`${baseUrl}/property`);
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYXJ2aW5kLXNpbmdoIiwiYSI6ImNrZXNkdHNkdzI1enoydHFtNWhhc3RwaG0ifQ.fpqZnJUUWMLZDJJq0Yuhiw";

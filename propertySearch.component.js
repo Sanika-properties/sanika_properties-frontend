@@ -9,7 +9,7 @@ var _React = React,
     useEffect = _React.useEffect;
 
 
-var endpoint = "http://localhost:3000/property?";
+var endpoint = "https://calm-earth-03611.herokuapp.com/property?";
 
 var PropertySearch = function PropertySearch() {
   var _useState = useState([]),
@@ -27,7 +27,7 @@ var PropertySearch = function PropertySearch() {
       error = _useState6[0],
       setError = _useState6[1];
 
-  var _useState7 = useState("http://localhost:3000/property"),
+  var _useState7 = useState("https://calm-earth-03611.herokuapp.com/property"),
       _useState8 = _slicedToArray(_useState7, 2),
       url = _useState8[0],
       setUrl = _useState8[1];
@@ -115,7 +115,7 @@ var PropertySearch = function PropertySearch() {
             "select",
             {
               className: "btn-sm form-control-plaintext",
-              id: "inputGroupSelect01",
+              id: "inputGroupSelect0",
               onChange: handleChange,
               name: "purpose"
             },
@@ -281,9 +281,9 @@ var PropertySearch = function PropertySearch() {
                   "li",
                   { className: "list-inline-item" },
                   React.createElement(
-                    "h6",
+                    "p",
                     null,
-                    React.createElement("i", { "class": "fas fa-rupee-sign" }),
+                    React.createElement("i", { className: "fas fa-rupee-sign" }),
                     " ",
                     property.price,
                     " ",
