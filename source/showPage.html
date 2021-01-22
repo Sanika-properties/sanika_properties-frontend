@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Show</title>
+
+   <!-- for maps -->
+   <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
+   <link href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css" rel="stylesheet" />
+  
+
+  
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- custom css for maps -->
+    <link rel="stylesheet" href="./showMap.css">
+</head>
+<body>
+    <header style="height: 10vh;"></header>
+   <div class="container">
+       <div class="row">
+           
+       
+        <div class="col-md-12">
+            <div class="card">
+                
+                
+                
+                <h5 class="mx-1 d-flex justify-content-end">$9.00/night</h5>
+                 
+                <h4 class="card-title mx-2">foundCampground.name</h4>
+                
+                <p class="mx-2" >foundCampground.description</p>
+                
+            </div>
+
+                        <!--COMMENT SECTION START-->
+            <div class="card-header">
+                <!--Setting up the add new comment button that is used for collapsing-->
+                <div class="text-right">
+                <a class="btn btn-success pull-right" role="button" data-toggle="collapse" href="#collapseComment" aria-expanded="false" aria-controls="collapseComment">
+                    <i class="fas fa-plus"></i> Add new comment</a>
+                </div>
+
+                <!--Comment section title-->
+                <h4><strong>Comments <i class="far fa-comment"></i></strong></h4>
+
+                <!--Collapse Add a comment form START-->
+                <div class="collapse" id="collapseComment">
+                <div class="card-header" style="border-left: 5px solid #00C851;">
+                    <% if(!currentUser) { %>
+                    <!--If the user is not logged in, direct him to the login page-->
+                    <h5>You need to login before you can comment. <a href="/login">Click here</a> to go to the login page.</h5>
+                    <% } %>
+                    <% if(currentUser) { %>
+                    <!--If the user is logged in, show the new comment form-->
+                    <h4>Write your comment <i class="fas fa-pencil-alt"></i></h4>
+                    <form id="add-comment-form" action="/campgrounds/<%= foundCampground._id %>/comments" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" disabled value="<%= currentUser.username %>">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="comment[text]" placeholder="Write your comment..." form="add-comment-form" rows="5" cols="70"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success btn-sm">Comment <i class="far fa-comment-dots"></i></button>
+                    </div>
+                    </form>
+                    <% } %>
+                </div>
+                </div>
+
+       </div>
+   </div>
+
+    <!-- bootstrap and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    
+    <script src="../customJS/shared.js"></script>
+    <script src="../mapbox/showPageMap.js"></script>
+</body>
+</html>
