@@ -1,9 +1,17 @@
 const token = localStorage.getItem("token");
 
+const propertyForm = document.getElementById("propertyForm");
+
 const propertyTitle = document.getElementById("title");
 const propertyLocation = document.getElementById("location");
 const propertyDescription = document.getElementById("description");
 const propertyImage = document.getElementById("image");
+
+const propertyPurpose = document.getElementById("purpose");
+const inputPropertyType = document.getElementById("propertyType");
+const propertyArea = document.getElementById("area");
+const propertyBedroom = document.getElementById("bedroom");
+const propertyPrice = document.getElementById("price");
 
 const logOutBtn = document.getElementById("logOut-btn");
 
@@ -14,16 +22,47 @@ document.addEventListener("click", function (e) {
       title: propertyTitle.value,
       description: propertyDescription.value.trim(),
       location: propertyLocation.value,
+      purpose:
+        propertyPurpose.value === "For Buying or Selling"
+          ? ""
+          : propertyPurpose.value,
+      propertyType:
+        inputPropertyType.value === "Property Type"
+          ? ""
+          : inputPropertyType.value,
+      area: propertyArea.value,
+      bedroom: propertyBedroom.value,
+      price: propertyPrice.value,
     };
 
-    const { title, description, location } = data;
-    if (title && description && location && propertyImage.files.length) {
+    const {
+      title,
+      description,
+      location,
+      purpose,
+      propertyType,
+      area,
+      bedroom,
+      price,
+    } = data;
+
+    if (
+      title &&
+      description &&
+      location &&
+      purpose.length &&
+      propertyType.length &&
+      area &&
+      price &&
+      propertyImage.files.length
+    ) {
+      console.log(purpose, propertyType);
       const formData = new FormData();
       console.log(propertyImage.files);
       formData.append("image", propertyImage.files[0]);
-      formData.append("title", data.title);
-      formData.append("description", data.description);
-      formData.append("location", data.location);
+      for (const [key, value] of Object.entries(data)) {
+        formData.append(key, value);
+      }
       createProperty(formData);
     } else {
       showModal("All Fields are required", "danger");
@@ -46,9 +85,9 @@ function createProperty(newProperty) {
       }
       res.json();
     })
-    .then((data) => {
-      console.log(data);
+    .then(() => {
       showModal("Property created", "success");
+      propertyForm.reset();
     })
     .catch((error) => {
       showModal(error, "danger");

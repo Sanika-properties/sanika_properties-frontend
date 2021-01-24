@@ -9,7 +9,7 @@ var _React = React,
     useEffect = _React.useEffect;
 
 
-var endpoint = "https://calm-earth-03611.herokuapp.com/property?";
+var endpoint = "https://sanika-properties.herokuapp.com/property?";
 
 var PropertySearch = function PropertySearch() {
   var _useState = useState([]),
@@ -27,7 +27,7 @@ var PropertySearch = function PropertySearch() {
       error = _useState6[0],
       setError = _useState6[1];
 
-  var _useState7 = useState("https://calm-earth-03611.herokuapp.com/property"),
+  var _useState7 = useState("https://sanika-properties.herokuapp.com/property"),
       _useState8 = _slicedToArray(_useState7, 2),
       url = _useState8[0],
       setUrl = _useState8[1];
@@ -251,7 +251,8 @@ var PropertySearch = function PropertySearch() {
                   { className: "text-muted" },
                   "Build up Area : "
                 ),
-                property.area
+                property.area,
+                " Sq.ft"
               ),
               property.bedroom && React.createElement(
                 "p",

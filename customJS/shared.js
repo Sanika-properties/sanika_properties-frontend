@@ -1,4 +1,4 @@
-const baseUrl = "https://calm-earth-03611.herokuapp.com";
+const baseUrl = "https://sanika-properties.herokuapp.com";
 
 const logOut = () => {
   localStorage.removeItem("token");

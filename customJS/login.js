@@ -1,6 +1,3 @@
-// const baseUrl = "http://localhost:3000";
-// const baseUrl = 'https://sanika-properties.herokuapp.com';
-
 const form = document.getElementById("login-form");
 const email = document.getElementById("email");
 const password = document.getElementById("password");

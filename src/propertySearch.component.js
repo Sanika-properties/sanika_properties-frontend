@@ -41,7 +41,7 @@ const cities = [
 
 const { useState, useEffect } = React;
 
-const endpoint = "https://calm-earth-03611.herokuapp.com/property?";
+const endpoint = "https://sanika-properties.herokuapp.com/property?";
 
 const PropertySearch = () => {
   const [properties, setProperties] = useState([]);
@@ -49,7 +49,7 @@ const PropertySearch = () => {
   const [error, setError] = useState("");
 
   const [url, setUrl] = useState(
-    "https://calm-earth-03611.herokuapp.com/property"
+    "https://sanika-properties.herokuapp.com/property"
   );
   const [queryParams, setQueryParams] = useState({});
 
@@ -217,7 +217,7 @@ const PropertySearch = () => {
                     </p>
                     <p className="font-italic">
                       <span className="text-muted">Build up Area : </span>
-                      {property.area}
+                      {property.area} Sq.ft
                     </p>
                     {property.bedroom && (
                       <p className="font-italic">

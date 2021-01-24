@@ -35,6 +35,12 @@
             <div class="sidebar-wrapper" id="sidebar-wrapper">
                 <ul class="nav">
                     <li>
+                        <a href="../Index.html">
+                          <i class="fas fa-home"></i>
+                          <p>Home</p>
+                        </a>
+                      </li>
+                    <li>
                         <a href="./dashboard.html">
                             <i class="now-ui-icons design_app"></i>
                             <p>Dashboard</p>
@@ -102,7 +108,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="mx-auto">
-                                    <form class="text-center border border-light px-5" action="#!">
+                                    <form class="text-center border border-light px-5" id="property">
                                         
                                         <input type="text" id="title" class="form-control mb-4" placeholder="Title"
                                             required>
@@ -110,8 +116,39 @@
                                         <input type="text" id="location" class="form-control mb-4"
                                             placeholder="Location" required>
 
-                                        <textarea class="form-control" type="text" id="description"
+                                        <textarea class="form-control mb-4" type="text" id="description"
                                             placeholder="Description" required></textarea>
+
+                                        <select id="purpose" name="purpose" class="form-control mb-4"
+                                     required>
+                                            <option selected="true" disabled="disabled">For Buying or Selling</option>
+                                            <option value="Buy">Buy</option>
+                                            <option value="Sell">Sell</option>
+                                        </select>
+
+                                        <select id="propertyType" name="propertyType" class="form-control mb-4"
+                                     required>
+                                            <option selected="true" disabled="disabled">Property Type</option>
+                                            <option value="Flats & Apartments">Flats & Apartments</option>
+                                            <option value="Industrial Land">Industrial Land</option>
+                                            <option value="Residential">Residential</option>
+                                            <option value="Factory / Industrial">Factory / Industrial</option>
+                                            <option value="Individual Houses">Individual Houses</option>
+                                            <option value="Business Center">Business Center</option>
+                                            <option value="Showrooms">Showrooms</option>
+                                        </select>
+
+                                        <input type="number" id="area" class="form-control mb-4"
+                                            placeholder="area in Square feet" required>
+
+                                        <input type="number" id="bedroom" class="form-control mb-4"
+                                            placeholder="Bedroom  eg: 1BHk" step="1" max="5">
+
+                                        <input type="number" id="price" class="form-control mb-4"
+                                            placeholder="Price in lakhs" step="1">
+
+
+                                        
 
                                         <div class="form-file custom-file mt-4">
                                             <input type="file" class="form-file-input" id="image" name="image" multiple
@@ -135,30 +172,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
-                <div class=" container-fluid ">
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="https://www.creative-tim.com">
-                                    Creative Tim
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://presentation.creative-tim.com">
-                                    About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://blog.creative-tim.com">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                </div>
-            </footer>
+            
         </div>
     </div>
     <!--   Core JS Files   -->
